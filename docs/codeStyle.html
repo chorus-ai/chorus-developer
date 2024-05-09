@@ -561,9 +561,9 @@ else
   inner_join(bar)</code></pre>
 </div>
 </div>
-<div id="ohdsi-code-style-for-sql" class="section level1">
-<h1>OHDSI code style for SQL</h1>
-<p>The OHDSI code style for SQL is heavily inspired by the <a href="http://architectshack.com/PoorMansTSqlFormatter.ashx">Poor Man’s T-SQL Formatter</a>, which is available as a <a href="https://notepad-plus-plus.org/">NotePad++</a> plugin. The only difference with the default settings is that in OHDSI, commas are trailing. You can automatically format your SQL correctly by using the <a href="http://poorsql.com/">Poor Man’s T-SQL Formatter Online Tool</a> (but don’t forget to set Trailing Commas).</p>
+<div id="chorus-code-style-for-sql" class="section level1">
+<h1>CHoRUS code style for SQL</h1>
+<p>The CHoRUS code style for SQL is heavily inspired by the <a href="http://architectshack.com/PoorMansTSqlFormatter.ashx">Poor Man’s T-SQL Formatter</a>, which is available as a <a href="https://notepad-plus-plus.org/">NotePad++</a> plugin. The only difference with the default settings is that in CHoRUS, commas are trailing. You can automatically format your SQL correctly by using the <a href="http://poorsql.com/">Poor Man’s T-SQL Formatter Online Tool</a> (but don’t forget to set Trailing Commas).</p>
 <div id="case-1" class="section level2">
 <h2>Case</h2>
 <p>Because several database platforms are case-insensitive and tend to convert table and field names to either uppercase (e.g. Oracle) or lowercase (e.g. PostgreSQL), we use snake_case. All names should be in lowercase. Reserved words should be in upper case.</p>
@@ -612,42 +612,6 @@ GROUP BY condition_type_concept_id;</code></pre>
 <pre class="sql"><code>SELECT COUNT(*) AS person_count, condition_type_concept_id
 FROM (SELECT * FROM condition_era WHERE condition_concept_id = 123) tmp
 GROUP BY condition_type_concept_id;</code></pre>
-</div>
-</div>
-<div id="interfacing-between-r-and-sql" class="section level1">
-<h1>Interfacing between R and SQL</h1>
-<p>In R we use camel case, and in SQL we use snake case. Therefore, on the interface between the two languages we must convert from one convention to the other. To facilitate this, the OHDSI <a href="https://ohdsi.github.io/SqlRender/"><code>SqlRender</code></a> and <a href="https://ohdsi.github.io/DatabaseConnector/"><code>DatabaseConnector</code></a> packages provide various features.</p>
-<p>In general, in R we can convert from one case to another using the <code>camelCaseToSnakeCase</code> and <code>snakeCaseToCamelcase</code> functions in the <code>SqlRender</code> package:</p>
-<pre class="r"><code>data &lt;- data.frame(cohortId = 1,
-                   cohortName = &quot;test&quot;)
-                   
-colnames(data) &lt;- camelCaseToSnakeCase(colnames(data))
-colnames(data)
-# [1] &quot;cohort_id&quot; &quot;cohort name&quot;
-
-colnames(data) &lt;- snakeCaseToCamelcase(colnames(data))
-colnames(data)
-# [1] &quot;cohortId&quot; &quot;cohortName&quot;</code></pre>
-<div id="when-downloading-data-from-the-database" class="section level2">
-<h2>When downloading data from the database</h2>
-<p>When downloading data, a shortcut is to use the <code>snakeCaseToCamelcase</code> argument of the <code>querySql</code> function in the <code>DatabaseConnector</code> package:</p>
-<pre class="r"><code>sql &lt;- &quot;SELECT cohort_definition_id, subject_id  FROM cdm.cohort;&quot;
-cohort &lt;- querySql(connection = connection,
-                   sql = sql,
-                   snakeCaseToCamelcase = TRUE)</code></pre>
-<p>Where <code>cohort</code> will be a data frame with columns <code>cohortDefinitionId</code> and <code>subjectId</code>.</p>
-</div>
-<div id="when-inserting-data-in-the-database" class="section level2">
-<h2>When inserting data in the database</h2>
-<p>When uploading data, a shortcut is to use the <code>camelCaseToSnakeCase</code> argument of the <code>insertTable</code> in the <code>DatabaseConnector</code> package:</p>
-<pre class="r"><code>dataToInsert &lt;- data.frame(cohortId = 1,
-                           cohortName = &quot;test&quot;)
-
-insertTable(connection = connection,
-            tableName = &quot;my_table&quot;,
-            data = dataToInsert,
-            camelCaseToSnakeCase = TRUE)</code></pre>
-<p>Where the table called <code>my_table</code> will have columns named <code>cohort_id</code> and <code>cohort_name</code>.</p>
 </div>
 </div>
 <div id="style-conventions-for-python-code" class="section level1">
