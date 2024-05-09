@@ -6,7 +6,7 @@ output:
         toc_float: TRUE
         css: hideTitle.css
 ---
-<img src="images/banner.png" alt="Health Analytics Data-to-Evidence Suite (CHoRUS)" style="vertical-align:top; margin-top: 20px;">
+<img src="images/banner.png" alt="Patient-Focused Collaborative Hospital Repository Uniting Standards (CHoRUS) for Equitable AI" style="vertical-align:top; margin-top: 20px;">
 
 The CHoRUS Data Generating Project (DGP) within the Bridge2AI research consortium has produced a powerful set of software and tooling to support multimodal analytics on healthcare data.
 
