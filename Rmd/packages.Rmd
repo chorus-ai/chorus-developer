@@ -1,0 +1,31 @@
+---
+title: 'Packages'
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+Below are the packages included in CHoRUS. For each package a link is provided with more information, including instructions on how to install and use the package.
+
+<h2 id="pkg_header">Data Extract Preparation</h2>
+<ul id="pkg">
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-extract-upload">chorus-extract-upload</a></h4>Tools to assemble and submit CHoRUS data extracts</br><a href="https://github.com/chorus-ai/chorus-extract-upload">Learn more...</a></li>
+</ul>
+<h2 id="pkg_header">Cloud Applications</h2>
+<ul id="pkg">
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-container-apps</a></h4>Containerized applications that support the OHDSI toolstack and broad-scale analytics</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/CHoRUSReports">CHoRUSReports</a></h4>R Package to generate a document with quality metrics to feedback to sites following data upload</br><a href="https://github.com/chorus-ai/CHoRUSReports">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/CADA">CADA</a></h4>Tool for adjudication and annotation of patient records</br><a href="https://github.com/chorus-ai/CADA">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/IVe">IVe</a></h4>Tool to view and interrogate multimodal clinical data</br><a href="https://github.com/chorus-ai/IVe">Learn more...</a></li>
+</ul>
+<h2 id="pkg_header">PHI and De-Identification</h2>
+<ul id="pkg">
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/privacy_scan_tool">privacy_scan_tool</a></h4>Various tools to search for PHI in medical records and associated data modalities</br><a href="https://github.com/chorus-ai/privacy_scan_tool">Learn more...</a></li>
+</ul>
+<h2 id="pkg_header">Modality-Specific</h2>
+<ul id="pkg">
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus_waveform">chorus_waveform</a></h4>Tools for interacting with waveform data</br><a href="https://github.com/chorus-ai/chorus_waveform">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus_imaging">chorus_imaging</a></h4>Tools for interacting with imaging data</br><a href="https://github.com/chorus-ai/chorus_imaging">Learn more...</a></li>
+</ul>
+

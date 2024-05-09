@@ -1,0 +1,41 @@
+name: "CHoRUS"
+output_dir: "../docs"
+output:
+  html_document:
+    theme: simplex
+    css: style.css
+    includes:
+      in_header: "favicon.html" 
+exclude: ["extras"]
+navbar:
+  title: '<img src="images/choruslong.png" width = 80 height = 20/>'
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Packages"
+      icon: fa-cube
+      href: packages.html
+    - text: "Developers"
+      icon: fa-wrench
+      menu: 
+        - text: "How to contribute"
+          href: contribute.html
+        - text: "Developer Community"
+          href: community.html   
+        - text: "Developer Guidelines"
+          href: developerGuidelines.html   
+        - text: "Code Style"
+          href: codeStyle.html 
+        - text: "Release Process"
+          href: releaseProcess.html 
+        - text: "Package Statuses"
+          href: packageStatuses.html
+        - text: "Development Roadmap"
+          href: developmentRoadmap.html
+        - text: "CHoRUS Package Requirements"
+          href: packageRequirements.html
+    - text: "Support"
+      icon: fa-life-ring
+      menu:
+        - text: "Questions and Bug reports"
+          href: support.html

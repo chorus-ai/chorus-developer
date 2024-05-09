@@ -1,0 +1,26 @@
+---
+title: "Development Community"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+CHoRUS is developed and maintained by the CHoRUS DGP of the Bridge2AI consortium.
+
+# Online discussions
+
+Online discussions can take place in the or on the [CHoRUS Discussion Forum](https://github.com/orgs/chorus-ai/discussions).
+
+# Package maintainers
+
+Each package in CHoRUS has assigned maintainers. These maintainers have the final responsibility and authority over their package. These are the expectations of package maintainers:
+
+- Represent the package in the CHoRUS group discussions.
+- Ensure that issues are resolved in a timely manner.
+- Review and merge pull requests.
+- Create releases (and communicate upcoming releases to those that need to know).
+- Adapt the package to changes in its dependencies.
+- Develop new functionality depending on the needs of the community.
+- Adhere to and enforce the CHoRUS standards, such as the [Developer Guidelines](developerGuidelines.html) and [Code Style Guide](codeStyle.html).
+

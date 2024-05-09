@@ -1,0 +1,34 @@
+---
+title: "Release Process"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+# The develop branch
+
+Ideally, all development should be done in the `develop` branch of the package GithHub repository. The aim should be to have a workable version in `develop` branch, so **make sure your package passes R CMD check locally before pushing to the `develop` branch**.
+
+# The main branch
+
+The head of the `main` branch should be the latest released version of the package. No changes should be directly pushed to the `main` branch.
+
+Package maintainers are responsible for 'protecting' their main branch with GitHub rules.
+
+# Continuous integration
+
+TODO
+
+# Version numbering
+
+Each package has a three-digit version number.
+
+- New micro versions (e.g. from 4.3.2 to 4.3.3) indicate bug fixes only. No new functionality, and forward and backward compatibility are guaranteed
+
+- New minor versions (e.g. from 4.3.3 to 4.4.0) indicate added functionality. Only backward compatibility is guaranteed
+
+- New major versions (e.g. from 4.4.0 to 5.0.0) indicate major revisions. All bets are off in terms of compatibility
+
+# Creating a release
+
+TODO
