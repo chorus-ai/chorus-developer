@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Package statuses</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="images/choruslong.png" width = 80 height = 20/></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="packages.html">
+    <span class="fa fa-cube"></span>
+     
+    Packages
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-wrench"></span>
+     
+    Developers
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="contribute.html">How to contribute</a>
+    </li>
+    <li>
+      <a href="community.html">Developer Community</a>
+    </li>
+    <li>
+      <a href="developerGuidelines.html">Developer Guidelines</a>
+    </li>
+    <li>
+      <a href="codeStyle.html">Code Style</a>
+    </li>
+    <li>
+      <a href="releaseProcess.html">Release Process</a>
+    </li>
+    <li>
+      <a href="packageStatuses.html">Package Statuses</a>
+    </li>
+    <li>
+      <a href="developmentRoadmap.html">Development Roadmap</a>
+    </li>
+    <li>
+      <a href="packageRequirements.html">CHoRUS Package Requirements</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-life-ring"></span>
+     
+    Support
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="support.html">Questions and Bug reports</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Package statuses</h1>
+
+</div>
+
+
+<p>The table below lists, for each of the CHoRUS packages, the following details:</p>
+<ul>
+<li><strong>Version</strong>: The latest released version.</li>
+<li><strong>Maintainer(s)</strong>: The persons responsible for the package. Only maintainers can create releases.</li>
+<li><strong>Availability</strong>: whether the package can be installed from CRAN (using <code>install.packages()</code>), or needs to be installed from GitHub (using <code>remotes::install_github()</code>).</li>
+<li><strong>Open issues</strong>: The number of open issues.</li>
+<li><strong>Open pull-requests</strong>: The number of open pull-requests.</li>
+<li><strong>Build status</strong>: Whether the lastest released version (head of <code>main</code>) passes R Check (including unit tests). The check is performed every weekend.</li>
+<li><strong>Coverage</strong>: The percentage of lines of code that is covered by the unit tests in the <code>main</code> branch (i.e. in the latest released version).</li>
+<li><strong>PaRe</strong>: A link to the report generated by the <a href="https://darwin-eu-dev.github.io/PaRe/">PaRe package</a>.</li>
+</ul>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="6%" />
+<col width="16%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="14%" />
+<col width="12%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="center">Version</th>
+<th align="left">Maintainer(s)</th>
+<th align="center">Availability</th>
+<th align="center">Open issues</th>
+<th align="center">Open pull-requests</th>
+<th align="center">Build status</th>
+<th align="center">Coverage</th>
+<th align="left">PaRe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/chorus-ai/chorus-extract-upload">chorus-extract-upload</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-extract-upload"><img src="https://img.shields.io/github/r-package/v/chorus-ai/chorus-extract-upload?label=%20" alt="Version" /></a></td>
+<td align="left">Jared, Will, Heidi</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-extract-upload/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/chorus-extract-upload?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-extract-upload/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/chorus-extract-upload?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/chorus-extract-upload?branch=main"><img src="https://codecov.io/github/chorus-ai/chorus-extract-upload/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/chorus-extract-upload.html">Report</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/chorus-ai/chorus-container-apps">chorus-container-apps</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-container-apps"><img src="https://img.shields.io/github/r-package/v/chorus-ai/chorus-container-apps?label=%20" alt="Version" /></a></td>
+<td align="left">Jared</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-container-apps/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/chorus-container-apps?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-container-apps/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/chorus-container-apps?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus-container-apps/actions/workflows/chorusimage.yml"><img src="https://github.com/chorus-ai/chorus-container-apps/actions/workflows/chorusimage.yml/badge.svg" alt="Build Status" /></a></td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/chorus-container-apps?branch=main"><img src="https://codecov.io/github/chorus-ai/chorus-container-apps/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/chorus-container-apps.html">Report</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/chorus-ai/CHoRUSReports">CHoRUSReports</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/CHoRUSReports"><img src="https://img.shields.io/github/r-package/v/chorus-ai/CHoRUSReports?label=%20" alt="Version" /></a></td>
+<td align="left">Jared</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/CHoRUSReports/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/CHoRUSReports?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/CHoRUSReports/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/CHoRUSReports?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/CHoRUSReports?branch=main"><img src="https://codecov.io/github/chorus-ai/CHoRUSReports/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/CHoRUSReports.html">Report</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/chorus-ai/CADA">CADA</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/CADA"><img src="https://img.shields.io/github/r-package/v/chorus-ai/CADA?label=%20" alt="Version" /></a></td>
+<td align="left">Del</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/CADA/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/CADA?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/CADA/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/CADA?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/CADA?branch=main"><img src="https://codecov.io/github/chorus-ai/CADA/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/CADA.html">Report</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/chorus-ai/IVe">IVe</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/IVe"><img src="https://img.shields.io/github/r-package/v/chorus-ai/IVe?label=%20" alt="Version" /></a></td>
+<td align="left">Del</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/IVe/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/IVe?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/IVe/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/IVe?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/IVe?branch=main"><img src="https://codecov.io/github/chorus-ai/IVe/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/IVe.html">Report</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/chorus-ai/privacy_scan_tool">privacy_scan_tool</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/privacy_scan_tool"><img src="https://img.shields.io/github/r-package/v/chorus-ai/privacy_scan_tool?label=%20" alt="Version" /></a></td>
+<td align="left">Xiaoqian</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/privacy_scan_tool/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/privacy_scan_tool?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/privacy_scan_tool/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/privacy_scan_tool?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/privacy_scan_tool?branch=main"><img src="https://codecov.io/github/chorus-ai/privacy_scan_tool/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/privacy_scan_tool.html">Report</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/chorus-ai/chorus_waveform">chorus_waveform</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_waveform"><img src="https://img.shields.io/github/r-package/v/chorus-ai/chorus_waveform?label=%20" alt="Version" /></a></td>
+<td align="left">Brian</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_waveform/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/chorus_waveform?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_waveform/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/chorus_waveform?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/chorus_waveform?branch=main"><img src="https://codecov.io/github/chorus-ai/chorus_waveform/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/chorus_waveform.html">Report</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/chorus-ai/chorus_imaging">chorus_imaging</a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_imaging"><img src="https://img.shields.io/github/r-package/v/chorus-ai/chorus_imaging?label=%20" alt="Version" /></a></td>
+<td align="left">Eddy</td>
+<td align="center">GitHub</td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_imaging/issues"><img src="https://img.shields.io/github/issues-raw/chorus-ai/chorus_imaging?label=%20" alt="Open issues" /></a></td>
+<td align="center"><a href="https://github.com/chorus-ai/chorus_imaging/pulls"><img src="https://img.shields.io/github/issues-pr-raw/chorus-ai/chorus_imaging?label=%20" alt="Open pull-requests" /></a></td>
+<td align="center">N/A</td>
+<td align="center"><a href="https://codecov.io/github/chorus-ai/chorus_imaging?branch=main"><img src="https://codecov.io/github/chorus-ai/chorus_imaging/coverage.svg?branch=main" alt="codecov.io" /></a></td>
+<td align="left"><a href="pare_reports/chorus_imaging.html">Report</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

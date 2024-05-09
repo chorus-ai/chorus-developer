@@ -1,0 +1,101 @@
+.rmdimportant {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  background-image: url("images/important.png");
+}
+
+.rounded {
+  padding: 1em 1em 1em 1em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  border-radius: 20px;
+}
+
+#pkg::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#pkg li{
+    display: inline;
+    float: left;
+    width: 240px;
+	height: 140px;
+	border: 2px;
+	border-style: solid;
+	border-color: #20425a;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 3px;
+	background-color: White;
+}
+
+#pkg h4{
+	display: block;
+	background-color: #20425a;
+	color: White;
+	margin-top: -3px;
+	margin-right: -3px;
+	margin-left: -3px;
+	margin-bottom: 0px;
+	padding: 3px;
+	font-size: initial;
+}
+
+#pkg h4 a{
+	color: White;
+}
+
+#pkg_header{
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#slanttable {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 50vw;
+  margin-top: 50px;
+}
+#slanttable table{
+  border-collapse: collapse;
+  --table-border-width: 1px;
+}
+#slanttable th {
+  white-space: nowrap;
+  position: relative;
+}
+#slanttable th > div {
+  /* place div at bottom left of the th parent */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* Make sure short setting names still meet the corner of the parent otherwise you'll get a gap */
+  text-align: left;
+  /* Move the top left corner of the span bottom-border to line up with the top left corner of the td border-right border so that the border corners are matched */
+  /* Rotate -45 degrees about matched border corners */
+  transform: 
+    translate(calc(100% - var(--table-border-width) / 2), var(--table-border-width))
+    rotate(315deg);
+  transform-origin: 0% calc(100% - var(--table-border-width));
+  width: 100%;
+}
+#slanttable th > div > span {
+  /* make sure the bottom of the span is matched up with the bottom of the parent div */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: var(--table-border-width) solid gray;
+}
+#slanttable td {
+    border-right: var(--table-border-width) solid gray;
+    /* make sure this is at least as wide as sqrt(2) * height of your tallest letter or the headers will overlap each other */
+    min-width: 30px;
+    text-align: right;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

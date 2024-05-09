@@ -1,0 +1,13 @@
+---
+title: "Development Roadmap"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+# Package milestones
+
+For each of the CHoRUS packages we try to define milestones corresponding to future releases...
+
+

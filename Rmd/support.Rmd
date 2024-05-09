@@ -1,0 +1,33 @@
+---
+title: "Questions and Bug Reports"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+# Forums
+
+General questions about CHoRUS can be asked on the [CHoRUS Discussion Forum](https://github.com/orgs/chorus-ai/discussions).
+
+Note that there are discussion locations for specific questions pertaining to [Standards](https://github.com/chorus-ai/StandardsModule/discussions) and [Data Acquisition](https://github.com/chorus-ai/data_acq_SOP/discussions)
+
+# Bug reports
+
+Bug reports should be files using the issue tracker of the misbehaving package:
+
+- [chorus-extract-upload issue tracker](https://github.com/chorus-ai/chorus-extract-upload/issues)
+
+- [chorus-container-apps issue tracker](https://github.com/chorus-ai/chorus-container-apps/issues)
+
+- [CHoRUSReports issue tracker](https://github.com/chorus-ai/CHoRUSReports/issues)
+
+- [CADA issue tracker](https://github.com/chorus-ai/CADA/issues)
+
+- [IVe issue tracker](https://github.com/chorus-ai/IVe/issues)
+
+- [privacy_scan_tool issue tracker](https://github.com/chorus-ai/privacy_scan_tool/issues)
+
+- [chorus_waveform issue tracker](https://github.com/chorus-ai/chorus_waveform/issues)
+
+- [chorus_imaging issue tracker](https://github.com/chorus-ai/chorus_imaging/issues)

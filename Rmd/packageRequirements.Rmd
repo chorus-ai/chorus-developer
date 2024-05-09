@@ -1,0 +1,81 @@
+---
+title: "CHoRUS Package Requirements"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+This page describes the minimal requirements a package must meet to be considered for inclusion in CHoRUS.
+
+# Functionality
+
+## Implement CHoRUS best practices
+
+A CHoRUS package should implement CHoRUS best practices, ideally as established through systematic empirical evaluation. Best practices include the ability to apply methods at large scale (e.g. across many exposures and outcomes). Methods should provide diagnostics, allowing the user to verify wether the results are accurate. (E.g. computing the standardized difference of the mean after propensity score matching).
+
+## Minimize duplication of functionality
+
+There should be no two CHoRUS packages that provide the same functionality.
+
+
+# Cross-platform support
+
+## Cross-database-platform support
+
+When a package needs to communicate with a user's database server, the package must support a wide variety of database platforms. The main mechanisms for this in CHoRUS are the `DatabaseConnector` and `SqlRender` packages.
+
+## Cross-operating system 
+
+A CHoRUS package should run without problems on Microsoft Windows, MacOS, and Linux.
+
+
+# Code style and organization
+
+All CHoRUS R packages follow the basic structure of R packages. See [R packages](http://r-pkgs.had.co.nz/) for a thorough discussion on R packages.
+
+All CHoRUS Python packages follow...
+
+All CHoRUS JavaScript packages follow...
+
+## Versioning
+
+Each package has a three-digit version number.
+
+- New micro versions (e.g. from 4.3.2 to 4.3.3) indicate bug fixes only. No new functionality, and forward and backward compatibility are guaranteed
+
+- New minor versions (e.g. from 4.3.3 to 4.4.0) indicate added functionality. Only backward compatibility is guaranteed
+
+- New major versions (e.g. from 4.4.0 to 5.0.0) indicate major revisions. All bets are off in terms of compatibility
+
+## Branches and tags
+
+The 'main' branch at all times should contain the latest released version. Each version, including the latest release, should be tagged as 'vx.x.x', for example 'v1.0.0'. 
+
+It is highly recommended to keep the latest develop version in a branch called 'develop'.
+
+## Code style
+
+A CHoRUS package should adhere to the [CHoRUS codes style guide](codeStyle.html).
+
+
+# Documentation
+
+TODO
+
+# Continuous integration and unit test
+
+TODO
+
+## Unit tests
+
+TODO
+
+# Dependencies
+
+TODO
+
+
+
+
+
