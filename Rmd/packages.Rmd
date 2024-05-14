@@ -14,7 +14,11 @@ Below are the packages included in CHoRUS. For each package a link is provided w
 </ul>
 <h2 id="pkg_header">Cloud Applications</h2>
 <ul id="pkg">
-<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-container-apps</a></h4>Containerized applications that support the OHDSI toolstack and broad-scale analytics</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-ares</a></h4>Containerized application to deploy the Ares tool for network-oriented OMOP data review</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-athena</a></h4>Containerized applications to deploy the Athena vocabulary search tool</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-etl</a></h4>Containerized application to support data ingestion, processing, and merging on the central cloud</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-portals</a></h4>Containerized applications to support user access, authentication, and interaction with the cloud environment</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-container-apps">chorus-reports</a></h4>Containerized application to quickly deploy the CHoRUSReports tool and its associated dependencies</br><a href="https://github.com/chorus-ai/chorus-container-apps">Learn more...</a></li>
 <li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/CHoRUSReports">CHoRUSReports</a></h4>R Package to generate a document with quality metrics to feedback to sites following data upload</br><a href="https://github.com/chorus-ai/CHoRUSReports">Learn more...</a></li>
 <li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/CADA">CADA</a></h4>Tool for adjudication and annotation of patient records</br><a href="https://github.com/chorus-ai/CADA">Learn more...</a></li>
 <li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/IVe">IVe</a></h4>Tool to view and interrogate multimodal clinical data</br><a href="https://github.com/chorus-ai/IVe">Learn more...</a></li>
@@ -27,5 +31,10 @@ Below are the packages included in CHoRUS. For each package a link is provided w
 <ul id="pkg">
 <li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus_waveform">chorus_waveform</a></h4>Tools for interacting with waveform data</br><a href="https://github.com/chorus-ai/chorus_waveform">Learn more...</a></li>
 <li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus_imaging">chorus_imaging</a></h4>Tools for interacting with imaging data</br><a href="https://github.com/chorus-ai/chorus_imaging">Learn more...</a></li>
+</ul>
+<h2 id="pkg_header">Documentation</h2>
+<ul id="pkg">
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/Chorus_SOP">Chorus_SOP</a></h4>Docusaurus-based code to construct a webpage for browsing approved SOPs</br><a href="https://github.com/chorus-ai/Chorus_SOP">Learn more...</a></li>
+<li><h4><i class="fas  fa-cube "></i> <a href="https://github.com/chorus-ai/chorus-developer">chorus-developer</a></h4>Jekyll-based code to construct a webpage housing package metadata and best practices for developers</br><a href="https://github.com/chorus-ai/chorus-developer">Learn more...</a></li>
 </ul>
 
